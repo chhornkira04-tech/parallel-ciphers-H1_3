@@ -1,0 +1,7 @@
+<Project>
+  <Target Name="RequireCheckedArithmetic" BeforeTargets="CoreCompile"
+          Condition="'$(MSBuildProjectExtension)' == '.csproj'">
+    <Error Condition="'$(CheckForOverflowUnderflow)' != 'true'"
+           Text="C# projects must enable CheckForOverflowUnderflow." />
+  </Target>
+</Project>
